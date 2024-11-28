@@ -1,0 +1,23 @@
+# Python-Cache-Dateien
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Umgebungsdateien
+.env
+
+# Betriebssystem-Dateien
+.DS_Store
+Thumbs.db
+
+# IDE-Dateien (falls du eine IDE nutzt)
+.vscode/
+.idea/
+
+# Log-Dateien
+*.log
+
+# Build- und Distributionsdateien
+/build/
+dist/

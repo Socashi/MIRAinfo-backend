@@ -1,9 +1,17 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
+from dotenv import load_dotenv
+import os
 import databases
 
+# .env-Datei laden
+load_dotenv()
+
 # Verbindung zur Datenbank
-DATABASE_URL = "sqlite:///./database.db"
+DATABASE_URL = os.getenv("DATABASE_URL")
+if not DATABASE_URL:
+    raise ValueError("Die Umgebungsvariable DATABASE_URL wurde nicht gesetzt.")
+print(f"DATABASE_URL: {DATABASE_URL}")
 database = databases.Database(DATABASE_URL)
 
 app = FastAPI()
